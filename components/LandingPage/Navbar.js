@@ -5,7 +5,7 @@ export default function Navbar() {
   return (
     <div className="flex justify-between">
         <div className="my-5 lg:my-6">
-            <Image src="/images/logo.svg" height={160} width={160} alt="easybank logo" />
+            <Image src="/images/logo.svg" height={32} width={160} alt="easybank logo" />
         </div>
         <div className="h-[50px] ">
         <Link href="/home">
