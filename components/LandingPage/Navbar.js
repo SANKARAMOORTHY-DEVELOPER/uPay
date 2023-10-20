@@ -13,7 +13,6 @@ export default function Navbar() {
             Launch App
         </button>
         </Link>
-
         </div>
 
     </div>

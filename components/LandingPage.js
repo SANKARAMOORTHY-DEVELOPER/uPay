@@ -11,8 +11,8 @@ import Footer from "./LandingPage/Footer"
 
 const LandingPage = () => {
   return (
-    <div className="bg-primary-dark-blue">
-    <div className=" bg-neutral-white px-28  py-2">
+    <div className=" bg-gray-600">
+    <div className=" bg-white bg-neutral-white px-28  py-2">
       <Navbar/>
       <div className="relative overflow-hidden">
         <div className="hidden lg:block w-full h-full absolute">

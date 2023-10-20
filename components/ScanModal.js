@@ -31,6 +31,7 @@
 // export default ScanModal
 import { useStateContext } from "../context";
 import React, {
+  useEffect,
   useState
 } from "react";
 import QrReader from "react-web-qr-reader";
@@ -45,10 +46,35 @@ const ScanModal = () => {
   };
 
   const [result, setResult] = useState(null);
+  // to store the object
+  const [qrResult,setQrResult]=useState(null);
 
-  const handleScan = (result) => {
-      setResult(result);
-      console.log("scan result",result);
+  const handleScan = (scan) => {
+      console.log("Scan",scan);
+      setResult(scan.data);
+      console.log("Result",result);
+      // Define a regular expression pattern to match paymentId and account
+      const pattern = /paymentId=([^\$]*)\$account=([^\$]*)\$USD=([^\$]*)\$token=([^\$]*)\$price=(.*)/;
+
+      // Use the `match` method to extract the values
+      const matches = result.match(pattern);
+
+      const data={
+        paymentId:matches[1],
+        account:matches[2],
+        tokenPrice:matches[3],
+        token:matches[4],
+        amount:matches[5]
+      }
+      setQrResult(data);
+      console.log("setQrResult",data);
+    
+      if (matches) {
+        console.log("Account:", data);
+      } else {
+        console.log("No match found in the string.");
+      }
+      // console.log("scan result",result);
   };
 
   const handleError = (error) => {
@@ -57,26 +83,9 @@ const ScanModal = () => {
 
   // all the code to handle the pay
   const {payToMerchant}=useStateContext();
-  const qrCode ="paymentId=812798721398$account=ox638290204837200090$USD=0.0378$token=Usdt$price=14";
 
-  // Define a regular expression pattern to match paymentId and account
-  const pattern = /paymentId=([^\$]*)\$account=([^\$]*)\$USD=([^\$]*)\$token=([^\$]*)\$price=(.*)/;
-  
-  // Use the `match` method to extract the values
-  const matches = qrCode.match(pattern);
-  
-  const data={
-    paymentId:matches[1],
-    account:matches[2],
-    tokenPrice:matches[3],
-    token:matches[4],
-    amount:matches[5]
-  }
-  if (matches) {
-    console.log("Account:", data);
-  } else {
-    console.log("No match found in the string.");
-  }
+
+
   
 
 
@@ -84,16 +93,17 @@ const ScanModal = () => {
     payToMerchant(data);
     console.log("You have initialted a payment");
   }
-  if(true)
+  if(result)
   {
     return (
       <div className="max-w-xs rounded overflow-hidden shadow-lg m-4">
-      <h1 className="text-3xl font-semibold text-center">Pay</h1>
+      HI
+      {/* <h1 className="text-3xl font-semibold text-center">Pay</h1>
       <div className="px-6 py-4">
-        <p className=" text-gray-600">Payment ID: <span className=" text-black">{data.paymentId}</span></p>
-        <p className=" text-gray-600">Account: <span className=" text-black">{data.account}</span></p>
-        <p className=" text-gray-600">Token: <span className=" text-black">{data.token}</span></p>
-        <p className=" text-gray-600">Amount: <span className=" text-black">{data.amount}</span></p>
+        <p className=" text-gray-600">Payment ID: <span className=" text-black">{result.paymentId}</span></p>
+        <p className=" text-gray-600">Account: <span className=" text-black">{result.account}</span></p>
+        <p className=" text-gray-600">Token: <span className=" text-black">{result.token}</span></p>
+        <p className=" text-gray-600">Amount: <span className=" text-black">{result.amount}</span></p>
       </div>
       <div className="px-6 py-4 flex justify-center">
         <button
@@ -102,7 +112,7 @@ const ScanModal = () => {
         >
           Pay
         </button>
-      </div>
+      </div> */}
     </div>
     )
   }
