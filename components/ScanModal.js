@@ -53,16 +53,29 @@ const ScanModal = () => {
     console.log(error);
   };
 
-  return (
-    <>
+  if(result)
+  {
+    return (<>
+    got data
+    </>)
+  }
+  else{
+    return (
+      <div className=" text-center font-semibold text-3xl">
+      <div className="py-5">
+      Scan Your Qr Code
+      </div>
+      <div>
       <QrReader
-        delay={delay}
-        style={previewStyle}
-        onError={handleError}
-        onScan={handleScan}
-      />
-    </>
-  );
+          delay={delay}
+          style={previewStyle}
+          onError={handleError}
+          onScan={handleScan}
+        />
+      </div>
+      </div>
+    )
+  }
 };
 
 export default ScanModal;
