@@ -1,8 +1,11 @@
 import React from 'react'
 
+
 const MerchantDashboard = () => {
   return (
-    <div>MerchantDashboard</div>
+    <div>
+    <h1>Merchant Dashboard</h1>
+    </div>
   )
 }
 

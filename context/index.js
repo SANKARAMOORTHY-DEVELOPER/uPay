@@ -4,9 +4,22 @@ const StateContext=createContext();
 
 export const StateContextProvider=({children})=>{
     const [registering,setRegistering]=useState(false);
+    // a fucntion to register for the merchant
     const addRegistration=(data)=>{
         try{
             console.log(data);
+            
+        }
+        catch(e)
+        {
+            console.log(e);
+        }
+    }
+    // a function to pay to the Merchant
+    const payToMerchant=(data)=>{
+        try{
+            console.log(data);
+
         }
         catch(e)
         {
@@ -14,7 +27,7 @@ export const StateContextProvider=({children})=>{
         }
     }
     return (
-        <StateContext.Provider value={{addRegistration,registering,setRegistering}}>
+        <StateContext.Provider value={{addRegistration,registering,setRegistering,payToMerchant}}>
         {children}
         </StateContext.Provider>
     )
