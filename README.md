@@ -42,10 +42,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 2. **Access Merchant Side Application**: Open the following link in your web browser: [Merchant Payment Application](https://upay-merchant-sui.vercel.app/).
 
-3. **Connect Your SUI Wallet**: To interact with the application on the SUI Testnet, you'll need to connect your SUI wallet. Make sure you have SUI wallet is installed and set up in your browser.
+3. **Connect Your SUI Wallet**: To interact with the application on the SUI Testnet, you'll need to connect your SUI wallet. Make sure you have SUI wallet installed and set up in your browser.
 
-3. **Create Payment QR Code**: In the merchant side application, click on the "Register as Merchant" button, payment ID, token of choice and amount to receive. After entering the values share/show the QR code to the customer to receive the payment.
+3. **Create Payment QR Code**: In the merchant side application, click on the "Register as Merchant" button, enter payment ID, coin/token of choice (currently, only USDT is supported) and amount of token to receive. After entering the values share/show the QR code to the customer to receive the payment.
 
-4. **Make Payments**: In the customer side application, login and scan the merchant side application QR code. Make the payment in any crypto token/coin of your choice (Currently, the only supported coin is SUI).
+4. **Make Payments**: In the customer side application, login and scan the merchant side application QR code. Make the payment in any crypto token/coin of your choice (currently, the only supported coin is SUI).
 
 **Note:** Please ensure that you're using the application on the SUI Testnet and have the SUI wallet connected for testing.
