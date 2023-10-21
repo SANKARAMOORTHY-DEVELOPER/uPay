@@ -113,16 +113,16 @@ const ScanModal = () => {
     payToMerchant(result);
     console.log("You have initialted a payment");
   }
-  if(true)
+  if(result)
   {
     return (
       <div className="max-w-xs rounded overflow-hidden shadow-lg m-4">
       <h1 className="text-3xl font-semibold text-center">Pay</h1>
       <div className="px-6 py-4">
-        <p className=" text-gray-600">Payment ID: <span className=" text-black">result.paymentId</span></p>
-        <p className=" text-gray-600">Account: <span className=" text-black">result.account</span></p>
-        <p className=" text-gray-600">Token: <span className=" text-black">result.token</span></p>
-        <p className=" text-gray-600">Amount: <span className=" text-black">result.amount</span></p>
+        <p className=" text-gray-600">Payment ID: <span className=" text-black">{result.paymentId}</span></p>
+        <p className=" text-gray-600">Account: <span className=" text-black">{result.account}</span></p>
+        <p className=" text-gray-600">Token: <span className=" text-black">{result.token}</span></p>
+        <p className=" text-gray-600">Amount: <span className=" text-black">{result.amount}</span></p>
       </div>
       <div className="px-6 py-4 flex justify-center">
         <button
