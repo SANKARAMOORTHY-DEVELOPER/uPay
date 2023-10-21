@@ -1,4 +1,4 @@
-# <img src="doc/upay-logo.png" width="23px" alt="upay-logo"> uPay
+# <img src="doc/upay-logo.jpeg" width="23px" alt="upay-logo"> uPay
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
